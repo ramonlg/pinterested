@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
+  <%= image_tag @pin.image.url(:medium) %><br/>
+  <p>
+    <strong>Description:</strong><br/>
+    <%= @pin.description %>
+  <br/>
+  </p>
 
 <% if @pin.user = current_user %>
   <%= link_to 'Edit', edit_pin_path(@pin) %> |

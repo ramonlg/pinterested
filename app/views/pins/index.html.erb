@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Listing Pins</h1>
 
 <table>
@@ -13,6 +12,7 @@
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
+        <td><%= image_tag pin.image.url(:medium) %></td>
         <td><%= pin.description %></td>
         <td><%= link_to 'Show', pin %></td>
         <% if pin.user == current_user %>
@@ -24,6 +24,6 @@
   </tbody>
 </table>
 
-<br>
+<br/>
 
 <%= link_to 'New Pin', new_pin_path %>
